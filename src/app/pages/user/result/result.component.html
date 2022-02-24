@@ -1,0 +1,35 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <app-user-sidebar></app-user-sidebar>  <!--   this will use static sidebar data from sidebar component -->
+            </div>
+            <div class="col-md-10">
+                <h1>Attempted Quizzes</h1>
+                <div class="row mt20" *ngIf="result">
+                    <div class="col-md-4" *ngFor="let r of result;index as i">
+                        <mat-card class="mb20">
+                            <mat-card-header>
+                                <div mat-card-avatar class="example-header-image"></div>
+                                <mat-card-title>
+                                    {{r.quiz.title}}
+                                </mat-card-title>
+                                <mat-card-subtitle>
+                                    {{r.quiz.category.title}}
+                                </mat-card-subtitle>
+                            </mat-card-header>
+                        <mat-card-content>
+                                <p class="truncate">{{r.quiz.description}}</p>
+                        </mat-card-content>
+    
+                        <mat-card-actions>
+                            <button mat-stroked-button color="warn">Obtained Marks : {{r.score}}</button>                   
+                            <button mat-stroked-button color="primary">Max Marks : {{r.quiz.maxMarks}}</button>
+                          </mat-card-actions>
+                    </mat-card>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>

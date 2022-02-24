@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-content>
+
+    <!-- {{user | json}} -->
+
+        <h2 class="text text-center"> Your Profile Details !!!</h2>   
+<div class="bootstrap-wrapper ">
+    <div class="container text-center " >
+        <img mat-card-image class="image" src="https://www.w3schools.com/howto/img_avatar.png" alt="profile image">
+        <h3  class="text">{{user.fname}} {{user.lname}}</h3>
+    </div>
+    
+    <div class="row text">
+        <div class="col-md-10 offset-md-1">
+            <table class="table" >
+                <tr>
+                    <td>Username</td>
+                    <td> {{user.username==null?'NA':user.username}}</td>
+                </tr>
+                <tr>
+                    <td>Userid</td>
+                    <td>{{user.id==null?'Not Available':user.id}} </td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td> {{user.phone==null?'Not Available':user.phone}}</td>
+                </tr>
+                <tr>
+                    <td>Role</td>
+                    <td>{{user.authorities[0].authority==null?'Not Available':user.authorities[0].authority}}</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td> {{user.enabled==null?'Not Available': (user.enabled?'ACTIVE':'INACTIVE')}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>    
+</div>
+</mat-card-content>
+
+<mat-card-actions class="text-center ">
+    <button mat-raised-button color="primary">LIKE</button>
+    <button mat-raised-button color="accent">SHARE</button>
+</mat-card-actions>
+</mat-card>
+

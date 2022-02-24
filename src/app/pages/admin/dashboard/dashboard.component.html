@@ -1,0 +1,12 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+              <app-sidebar></app-sidebar>     <!--   this will use static sidebar data from sidebar component -->
+            </div>
+            <div class="col-md-10">
+                <router-outlet></router-outlet>  <!--   this will render dynamic content data from different component like profile etc-->
+            </div>
+        </div>
+    </div>
+</div>

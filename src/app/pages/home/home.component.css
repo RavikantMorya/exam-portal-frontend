@@ -1,0 +1,8 @@
+.fwidth{
+  width: 100%;
+  height: 22%;
+}  
+  .example-header-image {
+    background-image: url('../../../assets/bac.jpg');
+    background-size: cover;
+  }

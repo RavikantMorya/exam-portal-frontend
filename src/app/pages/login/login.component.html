@@ -1,0 +1,37 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center ">
+                <div class="container" >
+                    <img src="../../../assets/logo.jpg" height="100px" width="100px" alt="missing img" >
+                </div>
+                <h1>Login Here!!</h1>
+            <!-- classes bg and abc are built in login.component.css
+            class mt20 is built in style.css  -->
+        
+                <mat-card class="bg ">
+                <form (ngSubmit)="formSubmit()">
+                    <div class="container abc pt20 " >
+                           <!-- user name-->
+                           <mat-form-field appearance="outline" class="full-width">
+                                    <mat-label>User Name</mat-label>
+                                    <input [(ngModel)]="loginData.username" name="username" matInput placeholder="Enter Your User Name" >
+                            </mat-form-field>
+    
+                        <!-- password field   -->
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Password </mat-label>
+                            <input [(ngModel)]="loginData.password" name="password" type="password" matInput placeholder="Enter Your Password" class="form-control" >
+                        </mat-form-field>
+
+                        <div class="container" >
+                            <button mat-raised-button type="submit" color="primary" style="margin: 20px;" >Login</button>
+                            <button mat-raised-button type="reset" color="accent">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

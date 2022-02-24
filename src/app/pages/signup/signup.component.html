@@ -1,0 +1,99 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 offset-md-3 text-center ">
+                <div class="container" >
+                    <img src="../../../assets/logo.jpg" height="100px" width="100px" alt="missing img" >
+                </div>
+                <h1>Register Here!!</h1>
+
+<!-- {{ user | json}}                -->
+<!-- to bind the data we first import Formshandler in app.module.ts and add Formshandler in import array  -->
+<!-- Create an object in .ts file. Try to keep names of field of object as it is in backend entity class-->
+<!-- and use ngModel in every input tag to bind the data with object from .ts -->
+<!-- ngSubmit is an event which will be called on submission of form. onSubmit function will be called in .ts  -->
+
+                <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <!-- user name-->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>User Name</mat-label>
+                        <input  [(ngModel)]="user.username"  formControlName="username" matInput placeholder="Enter Your User Name" >
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                            <div *ngIf="f.username.errors.required">User Name is required</div>
+                        </div>
+                    </mat-form-field>
+
+                    <!-- password field   -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Password </mat-label>
+                        <input  [(ngModel)]="user.password"  formControlName="password" type="password" matInput placeholder="Enter Your Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Confirm Password </mat-label>
+                        <input  formControlName="confirmPassword" type="password" matInput placeholder="Enter Your Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+                        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                            <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                            <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                        </div>
+                    </mat-form-field>
+
+
+                    <!-- first name -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>first Name</mat-label>
+                        <input  [(ngModel)]="user.fname"  formControlName="fname" matInput placeholder="Enter Your first Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" >
+                        <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                            <div *ngIf="f.fname.errors.required">First Name is required</div>
+                        </div>
+                    </mat-form-field>
+                    <!-- last name -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input  [(ngModel)]="user.lname" type="text" formControlName="lname" matInput placeholder="Enter Your Last Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" >
+                        <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
+                            <div *ngIf="f.lname.errors.required">Last Name is required</div>
+                        </div>
+                    </mat-form-field>
+<!-- 
+                    <div class="form-group col-5">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div> -->
+
+
+                    <!-- email id -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Email Address </mat-label>
+                        <input  [(ngModel)]="user.email"  formControlName="email" type="email" matInput placeholder="Enter Your email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors?.required">Email is required</div>
+                            <div *ngIf="f.email.errors?.email">Email must be a valid email address</div>
+                        </div>
+                    </mat-form-field>
+                    <!-- phone no -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Mobile Number</mat-label>
+                        <input formControlName="mobileNumber"  id="mobileNumber"   [(ngModel)]="user.phone"  name="phone" type="tel" matInput placeholder="Enter Your Mobile Number">
+                        <div *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid" class="alert alert-danger">  
+                            <div *ngIf="f.mobileNumber.errors?.required">Mobile Number is required.</div>  
+                            <div *ngIf="f.mobileNumber.errors?.pattern">Please, Enter 10 digit Mobile Number.</div>  
+                        </div>
+                    </mat-form-field>
+                    <div class="container" >
+                        <button mat-raised-button type="submit" color="primary" style="margin: 20px;" >Register</button>
+                        <button mat-raised-button type="reset" color="accent">Reset</button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+
+    </div>
+</div>

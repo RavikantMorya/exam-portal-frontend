@@ -1,0 +1,21 @@
+.image{
+    max-width: 200px;
+    max-height: 200px;
+    border: 2px solid violet;
+    border-radius:50%;
+
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border:1px solid #ff4081;
+  }
+  tr:hover {background-color: #f8f1f8;}
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #DDD;
+  }
+  .text{
+ font-family: 'Oooh Baby', cursive; 
+  }

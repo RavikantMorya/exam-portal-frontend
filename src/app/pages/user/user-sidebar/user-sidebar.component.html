@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+
+            <!-- user home user-dashboard -->
+        <button mat-list-item routerLink="/user-dashboard/0">
+            <mat-icon mat-list-icon>list</mat-icon>All Quizzes
+        </button>
+
+        <button mat-list-item routerLink="/history/">
+            <mat-icon mat-list-icon>task</mat-icon>My Attempts
+        </button>
+        
+
+        <!-- We are using /admin for home see children in app-routing-->
+        <button mat-list-item *ngFor="let c of category" [routerLink]="'/user-dashboard/'+c.cid">
+            <mat-icon mat-list-icon >category</mat-icon>{{c.title}}
+        </button>   
+  
+        
+    </mat-action-list>
+</mat-card>
